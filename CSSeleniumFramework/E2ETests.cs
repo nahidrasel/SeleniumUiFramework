@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using System.Linq;
 using AngleSharp.Text;
 using System.Collections.Generic;
+using CSSeleniumFramework.pageObjects;
 
 namespace CSSeleniumFramework
 {
@@ -17,8 +18,10 @@ namespace CSSeleniumFramework
             String[] expectedProducts = { "iphone X", "Blackberry" };
             String[] actualProducts = new string[2];
 
-            driver.FindElement(By.Id("username")).SendKeys("rahulshettyacademy");
-            driver.FindElement(By.Name("Password")).SendKeys("learning");
+            LoginPage loginPage = new LoginPage(getDriver()); 
+
+            loginPage.getUserName().SendKeys("learning");
+
             driver.FindElement(By.XPath("//div[@class='form-group'][5]/label/span/input")).Click();
             driver.FindElement(By.XPath("//input[@value='Sign in']")).Click();
             
