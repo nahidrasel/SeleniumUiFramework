@@ -18,12 +18,9 @@ namespace CSSeleniumFramework
             String[] expectedProducts = { "iphone X", "Blackberry" };
             String[] actualProducts = new string[2];
 
-            LoginPage loginPage = new LoginPage(getDriver()); 
+            LoginPage loginPage = new LoginPage(getDriver());
 
-            loginPage.getUserName().SendKeys("learning");
-
-            driver.FindElement(By.XPath("//div[@class='form-group'][5]/label/span/input")).Click();
-            driver.FindElement(By.XPath("//input[@value='Sign in']")).Click();
+            loginPage.validLogin("rahulshettyacademy", "learning");
             
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
 
