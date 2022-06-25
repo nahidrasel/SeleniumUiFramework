@@ -1,2 +1,2 @@
 # SeleniumUiFramework
-This repo has complete structure of a UI Automation Framework using Csharp
+This repo has complete structure of an UI Automation Framework using Csharp
